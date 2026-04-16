@@ -10,10 +10,12 @@ keywords: 'CTF'
 author: BHNK
 language: zh-CN
 timezone: Asia/Shanghai
+encoding: utf-8
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://bhnk-web.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -101,4 +103,18 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/BHNK-web/BHNK-web.github.io.git
+  branch: main
+  message: "更新: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+# SEO 设置
+# 搜索引擎优化
+sitemap:
+  path: sitemap.xml
+  
+# 如果你使用中文，添加百度站长工具支持
+baidusitemap:
+  path: baidusitemap.xml
+  
+# 机器人协议
+robots: true
