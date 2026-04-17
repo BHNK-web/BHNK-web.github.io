@@ -8,10 +8,10 @@ tags:
 ## 解题思路
 + 第一步
   打开题目发现
-  ![屏幕截图](images/屏幕截图 D:\myblog\source\images 2025-10-19 202757)
+  ![屏幕截图](https://github.com/BHNK-web/BHNK-web.github.io/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-19%20202757.png?raw=true)
   这个页面，此时考虑注入，输入：`admin' or 1=1 union select 1,(select count(*) from information_schema.tables where table_schema = '登录就有flag'),3 limit 1,2;#--`
   发现
-  ![屏幕截图](images/屏幕截图 D:\myblog\source\images 2025-10-19 203013.png)
+  ![屏幕截图](https://github.com/BHNK-web/BHNK-web.github.io/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-19%20203013.png?raw=true)
   找不到
 
 + 第二步
